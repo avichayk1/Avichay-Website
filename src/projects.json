@@ -1,0 +1,31 @@
+[
+  {
+    "title": "Properties Managment Website",
+    "liveUrl": "",
+    "githubUrl": "https://github.com/avichayk1/management-tracking-assets-site",
+    "description": "A client-server website for managing properties management companies.  including data base management.",
+    "technologies": ["React", "Express","Node.js","Axios","MySQL","MUI (Material-UI)"],
+    "languages": ["Python","Sql"],
+    "image":"./images/PropertiesManagementSite.png"
+  },
+  {
+    "title": "Join Tool",
+    "liveUrl": "https://jointool.streamlit.app/",
+    "githubUrl": "https://github.com/avichayk1/Barshai-Projects/tree/main/GTFS_Join_Tool",
+    "description": "This tool is designed for merging and plotting data from multiple .txt files. The user can upload files, select columns to include, merge them based on a common column, and visualize the data through plots.",
+    "technologies": ["pandas", "streamlit"],
+    "languages": ["python"],
+    "image":"./images/GTFS Merge and Plot Tool.png"
+  },
+  {
+      "title": "Neshama App",
+      "liveUrl": "https://neshama-app.vercel.app/",
+      "githubUrl": "https://github.com/avichayk1/Neshama-app",
+      "description": "A website that allows the user to enter the name of the deceased and receive the entire study content for the \"elui neshama\".",
+      "technologies": ["React", "Node.js","Vercel"],
+      "languages": ["JavaScript","Html","CSS"],
+      "image": "/images/neshama.png"
+    }
+
+  ]
+  
