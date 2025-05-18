@@ -36,7 +36,7 @@ const Home = () => {
                                   backgroundColor: '#00FF00',
                                 },
                                 '& .MuiSwitch-track': {
-                                  backgroundColor: darkMode ? '#555' : '#ccc',  // צבע לקו ברקע
+                                  backgroundColor: darkMode ? '#555' : '#ccc', 
                                 }
                               }}
                         />
