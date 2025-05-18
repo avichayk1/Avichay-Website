@@ -34,7 +34,7 @@ const Project=(project)=>{
                 </span>
              ))}.</p>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <Button 
+                {project.title!="Properties Managment Website" &&( <Button 
                 variant="contained" 
                 color="primary"
                 href={project.liveUrl}
@@ -43,7 +43,7 @@ const Project=(project)=>{
                 style={{ width: '150px',marginRight:"150px"}}
                 >
                 To Website
-                </Button>
+                </Button>)}
                 <Button 
                 variant="contained" 
                 color="success"
