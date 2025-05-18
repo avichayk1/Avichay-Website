@@ -14,7 +14,7 @@ const Project=(project)=>{
             borderStyle: 'solid',        // חייבים סגנון למסגרת
             borderWidth: '6px',  
             boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-            height:"520px",
+            height:"550px",
             // width: '300px'
         }}>
              <h3 style={{color:"#88ebfa"}}>{project.title}</h3>
@@ -33,28 +33,37 @@ const Project=(project)=>{
                     {index !== project.languages.length - 1 && ', '}
                 </span>
              ))}.</p>
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                {project.title!="Properties Managment Website" &&( <Button 
+<div style={{ display: 'flex', justifyContent: 'space-between', width: '450px' }}>
+    <div>
+        {project.title !== "Properties Managment Website" && (
+            <Button 
                 variant="contained" 
                 color="primary"
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ width: '150px',marginRight:"150px"}}
-                >
+                style={{ width: '150px' }}
+            >
                 To Website
-                </Button>)}
-                <Button 
+            </Button>
+        )}
+    </div>
+    <div>
+        {project.githubUrl && (
+            <Button 
                 variant="contained" 
                 color="success"
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ width: '150px' }}
-                >
+            >
                 To GitHub
-                </Button>
-          </div>
+            </Button>
+        )}
+    </div>
+</div>
+
         </div>
 
     )
