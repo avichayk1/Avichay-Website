@@ -1,71 +1,77 @@
 import React from 'react';
 import Button from '@mui/material/Button';
 
-const Project=(project)=>{
-    return(
-        <div 
-        style= {{
+const Project = ({ title, image, description, technologies, languages, liveUrl, githubUrl, darkMode }) => {
+    const textColor = darkMode ? "#88ebfa" : "#000000";
+    const backgroundColor = darkMode ? "black" : "#f4f4f4";
+
+    return (
+        <div style={{
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'space-between', // מפזר תוכן מעלה/מטה
-            backgroundColor: 'black',
+            justifyContent: 'space-between',
+            backgroundColor,
             borderRadius: '12px',
-            borderColor:"AppWorkspace",
-            borderStyle: 'solid',        // חייבים סגנון למסגרת
-            borderWidth: '6px',  
+            borderColor: darkMode ? 'AppWorkspace' : '#000000', // ירוק בדארק, שחור בלייט
+            borderStyle: 'solid',
+            borderWidth: '6px',
             boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-            height:"550px",
-            // width: '300px'
+            height: "550px",
+            padding: "10px"
         }}>
-             <h3 style={{color:"#88ebfa"}}>{project.title}</h3>
-             <img   style={{ width: '450px', height: '200px' }} 
-                    src={project.image} alt="A picture of the web" />
-             <p style={{ width: '450px', height: '90px',color:"#88ebfa" }}><strong>Description:&nbsp;</strong>{project.description}</p>
-             <p style={{ width: '450px',color:"#88ebfa" }}><strong>Technologies:&nbsp;</strong>{ project.technologies.map((tech,index)=>(
-                <span key = {index}>
-                    {tech}
-                    {index !== project.technologies.length - 1 && ', '}
-                </span>
-             ))}.</p>
-                <p style={{ width: '450px',color:"#88ebfa" }}><strong>Languages:&nbsp;</strong>{ project.languages.map((lang,index)=>(
-                <span key = {index}>
-                    {lang}
-                    {index !== project.languages.length - 1 && ', '}
-                </span>
-             ))}.</p>
-<div style={{ display: 'flex', justifyContent: 'space-between', width: '450px' }}>
-    <div>
-        {project.title !== "Properties Managment Website" && (
-            <Button 
-                variant="contained" 
-                color="primary"
-                href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ width: '150px' }}
-            >
-                To Website
-            </Button>
-        )}
-    </div>
-    <div>
-        {project.githubUrl && (
-            <Button 
-                variant="contained" 
-                color="success"
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ width: '150px' }}
-            >
-                To GitHub
-            </Button>
-        )}
-    </div>
-</div>
-
+            <h3 style={{ color: textColor }}>{title}</h3>
+            <img style={{ width: '450px', height: '200px' }} src={image} alt="Project" />
+            <p style={{ width: '450px', height: '90px', color: textColor }}>
+                <strong>Description:&nbsp;</strong>{description}
+            </p>
+            <p style={{ width: '450px', color: textColor }}>
+                <strong>Technologies:&nbsp;</strong>
+                {technologies.map((tech, index) => (
+                    <span key={index}>
+                        {tech}{index !== technologies.length - 1 && ', '}
+                    </span>
+                ))}.
+            </p>
+            <p style={{ width: '450px', color: textColor }}>
+                <strong>Languages:&nbsp;</strong>
+                {languages.map((lang, index) => (
+                    <span key={index}>
+                        {lang}{index !== languages.length - 1 && ', '}
+                    </span>
+                ))}.
+            </p>
+            <div style={{ display: 'flex', justifyContent: 'space-between', width: '450px' }}>
+                <div>
+                    {title !== "Properties Managment Website" && (
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            href={liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ width: '150px' }}
+                        >
+                            To Website
+                        </Button>
+                    )}
+                </div>
+                <div>
+                    {githubUrl && (
+                        <Button
+                            variant="contained"
+                            color="success"
+                            href={githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ width: '150px' }}
+                        >
+                            To GitHub
+                        </Button>
+                    )}
+                </div>
+            </div>
         </div>
+    );
+};
 
-    )
-}
-export default Project
+export default Project;
